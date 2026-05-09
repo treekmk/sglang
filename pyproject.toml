@@ -1,0 +1,23 @@
+[project]
+name = "sglang-v4-flash-deploy"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "deep-gemm",
+    "flash-mla",
+    "flashinfer-jit-cache==0.6.8.post1",
+    "sglang",
+]
+
+[tool.uv.workspace]
+members = [
+    "python",
+]
+
+[[tool.uv.index]]
+url = "https://flashinfer.ai/whl/cu130"
+
+[tool.uv.sources]
+sglang = { workspace = true, editable = true }
+flash-mla = { path = ".build/flash-mla" }
+deep-gemm = { path = ".build/DeepGEMM" }
