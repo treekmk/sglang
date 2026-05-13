@@ -73,6 +73,7 @@ nohup setsid python -m sglang.launch_server \
     --port "$PORT" \
     --mem-fraction-static "$MEM_FRACTION_STATIC" \
     --chunked-prefill-size 4096 \
+    --disable-custom-all-reduce \
     > "$LOG" 2>&1 &
 SERVER_PID=$!
 echo "$SERVER_PID" > "$PIDFILE"
